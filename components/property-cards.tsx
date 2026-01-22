@@ -59,7 +59,7 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                   </div>
                 </Link>
                   
-                <div className="p-4 sm:p-6 flex-1 flex flex-col">
+                <div className="p-4 sm:p-6 flex-1 flex flex-col overflow-hidden">
                   <Link 
                     href={`/properties/${property.id}`}
                     prefetch={true}
@@ -127,12 +127,12 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                           asChild
                           variant="outline"
                           size="sm"
-                          className="flex-1 text-[13px] sm:text-[14px] md:text-[16px] border-olive/30 text-olive hover:bg-olive hover:text-cream"
+                          className="flex-1 min-w-0 text-[13px] sm:text-[14px] md:text-[16px] border-olive/30 text-olive hover:bg-olive hover:text-cream"
                           onClick={(e) => e.stopPropagation()}
                         >
                           <a href={property.bookingUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                            <ExternalLink className="h-3 w-3 mr-1" />
-                            Booking.com
+                            <ExternalLink className="h-3 w-3 mr-1 flex-shrink-0" />
+                            <span className="truncate">Booking.com</span>
                           </a>
                         </Button>
                       )}
@@ -141,12 +141,12 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                           asChild
                           variant="outline"
                           size="sm"
-                          className="flex-1 text-[13px] sm:text-[14px] md:text-[16px] border-olive/30 text-olive hover:bg-olive hover:text-cream"
+                          className="flex-1 min-w-0 text-[13px] sm:text-[14px] md:text-[16px] border-olive/30 text-olive hover:bg-olive hover:text-cream"
                           onClick={(e) => e.stopPropagation()}
                         >
                           <a href={property.airbnbUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                            <ExternalLink className="h-3 w-3 mr-1" />
-                            Airbnb
+                            <ExternalLink className="h-3 w-3 mr-1 flex-shrink-0" />
+                            <span className="truncate">Airbnb</span>
                           </a>
                         </Button>
                       )}
@@ -154,7 +154,7 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                         asChild
                         variant="outline"
                         size="sm"
-                        className="flex-1 text-[13px] sm:text-[14px] md:text-[16px] border-olive/30 text-olive hover:bg-olive hover:text-cream"
+                        className="flex-1 min-w-0 text-[13px] sm:text-[14px] md:text-[16px] border-olive/30 text-olive hover:bg-olive hover:text-cream"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <a 
@@ -163,8 +163,8 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                           rel="noopener noreferrer" 
                           className="flex items-center justify-center"
                         >
-                          <MapPin className="h-3 w-3 mr-1" />
-                          View on Map
+                          <MapPin className="h-3 w-3 mr-1 flex-shrink-0" />
+                          <span className="truncate">View on Map</span>
                         </a>
                       </Button>
                     </div>

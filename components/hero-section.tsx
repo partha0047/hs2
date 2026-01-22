@@ -12,16 +12,16 @@ export function HeroSection() {
       {/* Full screen background image with parallax effect */}
       <div className="absolute inset-0">
         <Image
-          src="https://picsum.photos/1920/1080?random=100"
-          alt="Luxurious interior"
+          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80"
+          alt="Beautiful nature landscape"
           fill
           className="object-cover scale-105 transition-transform duration-700 ease-out"
           priority
           sizes="100vw"
         />
-        {/* Modern gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal/50 via-charcoal/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+        {/* Bright nature-friendly gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-olive/20 via-sage/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cream/40 via-transparent to-transparent" />
       </div>
 
       {/* Text content with modern design */}
@@ -33,7 +33,7 @@ export function HeroSection() {
           className="max-w-3xl mx-auto text-center"
         >
           {/* Modern card with glassmorphism */}
-          <div className="bg-olive/20 backdrop-blur-2xl p-6 sm:p-8 md:p-10 lg:p-16 shadow-2xl rounded-xl sm:rounded-2xl border border-olive/30 relative overflow-hidden mx-4 sm:mx-0">
+          <div className="bg-cream/60 backdrop-blur-2xl p-6 sm:p-8 md:p-10 lg:p-16 shadow-2xl rounded-xl sm:rounded-2xl border border-cream/50 relative overflow-hidden mx-4 sm:mx-0">
             {/* Subtle accent line */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-olive via-sage to-olive" />
             
@@ -43,11 +43,11 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="font-serif text-[32px] sm:text-[44px] md:text-[56px] lg:text-[64px] font-medium text-charcoal mb-4 sm:mb-6 leading-tight tracking-tight">
+              <h1 className="font-serif text-[32px] sm:text-[44px] md:text-[56px] lg:text-[64px] font-medium text-charcoal mb-4 sm:mb-6 leading-tight tracking-tight drop-shadow-lg">
                 Siti Express
               </h1>
               <div className="w-16 sm:w-20 h-1 bg-olive mb-4 sm:mb-6 mx-auto" />
-              <p className="text-charcoal/75 leading-relaxed mb-6 sm:mb-8 font-sans text-[16px] sm:text-[18px] md:text-[20px] max-w-2xl mx-auto px-2 sm:px-0">
+              <p className="text-charcoal leading-relaxed mb-6 sm:mb-8 font-sans text-[16px] sm:text-[18px] md:text-[20px] max-w-2xl mx-auto px-2 sm:px-0 drop-shadow-md">
                 Experience luxury and comfort in our carefully curated collection of premium accommodations. 
                 Each space is thoughtfully designed to provide an unforgettable stay.
               </p>
@@ -81,13 +81,13 @@ export function HeroSection() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-cream/80 text-[14px] font-sans uppercase tracking-wider">Scroll</span>
+          <span className="text-charcoal/80 text-[14px] font-sans uppercase tracking-wider drop-shadow-sm">Scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-cream/60 rounded-full flex items-start justify-center p-2"
+            className="w-6 h-10 border-2 border-charcoal/40 rounded-full flex items-start justify-center p-2"
           >
-            <div className="w-1.5 h-1.5 bg-cream/80 rounded-full" />
+            <div className="w-1.5 h-1.5 bg-charcoal/70 rounded-full" />
           </motion.div>
         </div>
       </motion.div>
