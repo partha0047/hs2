@@ -51,7 +51,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
+              "@context": "https://schema.org", 
               "@type": "LodgingBusiness",
               name: "Siti Express",
               description: "Premium homestays offering luxury accommodations",

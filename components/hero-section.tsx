@@ -4,76 +4,72 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Full screen background image with parallax effect */}
+      {/* Full-bleed dark luxury background */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80"
-          alt="Beautiful nature landscape"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+          alt="Luxurious villa with pool at dusk"
           fill
-          className="object-cover scale-105 transition-transform duration-700 ease-out"
+          className="object-cover object-center"
           priority
           sizes="100vw"
         />
-        {/* Bright nature-friendly gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-olive/20 via-sage/10 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-cream/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-charcoal/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent" />
       </div>
 
-      {/* Text content with modern design */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+      {/* Centered content – no card, text directly on image */}
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 w-full text-center">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl mx-auto text-center"
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center"
         >
-          {/* Modern card with glassmorphism */}
-          <div className="bg-cream/60 backdrop-blur-2xl p-6 sm:p-8 md:p-10 lg:p-16 shadow-2xl rounded-xl sm:rounded-2xl border border-cream/50 relative overflow-hidden mx-4 sm:mx-0">
-            {/* Subtle accent line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-olive via-sage to-olive" />
-            
-            {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+          <h1 className="font-serif text-[36px] sm:text-[48px] md:text-[56px] lg:text-[72px] font-medium text-white leading-[1.1] tracking-tight mb-5 sm:mb-6">
+            Find Your
+            <br />
+            Perfect Stay
+          </h1>
+          <p className="font-sans text-white/95 text-[16px] sm:text-[18px] md:text-[20px] leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10">
+            Book boutique homestays, private villas & curated experiences. Tailored for those who travel with taste.
+          </p>
+
+          {/* Circular play button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col items-center gap-4"
+          >
+            <button
+              type="button"
+              aria-label="Play video"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white/90 bg-white/5 backdrop-blur-sm flex items-center justify-center hover:bg-white/15 hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent"
             >
-              <h1 className="font-serif text-[32px] sm:text-[44px] md:text-[56px] lg:text-[64px] font-medium text-charcoal mb-4 sm:mb-6 leading-tight tracking-tight drop-shadow-lg">
-                Siti Express
-              </h1>
-              <div className="w-16 sm:w-20 h-1 bg-olive mb-4 sm:mb-6 mx-auto" />
-              <p className="text-charcoal leading-relaxed mb-6 sm:mb-8 font-sans text-[16px] sm:text-[18px] md:text-[20px] max-w-2xl mx-auto px-2 sm:px-0 drop-shadow-md">
-                Experience luxury and comfort in our carefully curated collection of premium accommodations. 
-                Each space is thoughtfully designed to provide an unforgettable stay.
-              </p>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex justify-center"
-              >
-                <Button 
-                  asChild 
-                  size="lg"
-                  className="bg-olive hover:bg-olive/90 text-cream text-[15px] sm:text-[17px] px-6 sm:px-8 py-5 sm:py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group w-full sm:w-auto"
-                >
-                  <Link href="#rooms" className="flex items-center justify-center gap-2" prefetch={true}>
-                    Explore Homestays
-                    <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </motion.div>
-            </motion.div>
-          </div>
+              <Play className="w-6 h-6 sm:w-7 sm:h-7 text-white fill-white ml-1" strokeWidth={1.5} />
+            </button>
+            <Button
+              asChild
+              variant="ghost"
+              size="sm"
+              className="text-white/90 hover:text-white hover:bg-white/10 font-sans text-[14px] sm:text-[15px]"
+            >
+              <Link href="#rooms" className="flex items-center gap-2" prefetch={true}>
+                Explore Homestays
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator – white */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -81,13 +77,15 @@ export function HeroSection() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-charcoal/80 text-[14px] font-sans uppercase tracking-wider drop-shadow-sm">Scroll</span>
+          <span className="text-white/80 text-[12px] sm:text-[14px] font-sans uppercase tracking-widest">
+            Scroll
+          </span>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
+            animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-charcoal/40 rounded-full flex items-start justify-center p-2"
+            className="w-6 h-9 border-2 border-white/60 rounded-full flex items-start justify-center pt-2"
           >
-            <div className="w-1.5 h-1.5 bg-charcoal/70 rounded-full" />
+            <div className="w-1 h-1 bg-white/80 rounded-full" />
           </motion.div>
         </div>
       </motion.div>
